@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous">
+    <link rel="stylesheet" href="home.css">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="container">
+        <h1>TODO APP</h1>
+        <form action="/create-todo" class="todo" method="post">
+
+            <div id="descripton">
+               <label for="input">DESCRIPTION</label>
+               <br>
+                <input type="text" name="todo-input" id="input" placeholder="What do you need to do?">
+            </div>
+            <div id="categories">
+                <div id="category">
+                    <label for="category-options"> CATEGORY </label>
+                    <br>
+                    <select name="category" id="category-options">
+                        <option value="" selected disabled>Choose a category</option>
+                        <option value="school">School</option>
+                        <option value="work">Work</option>
+                        <option value="personal">Personal</option>
+                        <option value="cleaning">Cleaning</option>
+                        <option value="others">Others</option>
+                    </select>
+                </div>
+                <div id="due-date">
+                    <span class="text">DUE DATE</span>
+                    <br>
+                    <input type="date" name="due-date">
+                </div>
+            </div>
+
+            <button type="submit">
+                <i class="fas fa-plus"></i>    
+                ADD TASK
+            </button>
+        </form>
+
+
+
+
+        
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,86 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 98vh;
+}
+
+#container{
+    width: 70%;
+    height: 60vh;
+    border: 2px solid #b5b5b5;
+}
+
+#container h1{
+    text-align: center;
+    border-bottom: 2px solid #b5b5b5;
+    color: grey;
+    opacity: .8;
+}
+
+#descripton{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 100%;
+    height: 70px;
+    border-bottom: 2px solid #b5b5b5;
+    padding-left: 1rem;
+}
+#input{
+    height: 40px;
+    margin-top: -20px;
+    border: none;
+    outline:none;
+    font-size: 1.2rem;
+}
+
+#input::placeholder{
+    font-size: 1rem;
+}
+
+input:focus{
+    outline: none;
+}
+
+label,
+.text{
+    color : rgb(123, 121, 121);
+}
+
+#categories{
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    height: 50px;
+    border-bottom: 2px solid #b5b5b5;
+}
+#categories div{
+    width: 50%;
+    margin: 2px;
+    padding-left: 1rem;
+}
+
+#category{
+    border-right: 2px solid #b5b5b5;
+}
+
+#category-options{
+    width: 100%;
+    border: none;
+}
+
+#category-options:focus{
+    outline: none;
+}
+
+#due-date input{
+    width: 80%;
+    border: none;
+}
