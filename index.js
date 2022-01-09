@@ -2,12 +2,16 @@ const express = require("express");
 const app = express();
 const port = 8000;
 
+const homeController = require('./controller/home_controller');
+
 app.set("view engine", "ejs");
 app.set("views", "views");
 app.use(express.urlencoded());
 app.use(express.static("./assets"));
 
-app.get('/', require("./routes"))
+app.use('/', require("./routes"));
+const db = require('./config/mongoose');
+
 
 app.listen(port, (err) =>{
     if(err){

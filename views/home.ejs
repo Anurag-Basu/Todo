@@ -5,20 +5,24 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css"
+        integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous">
     <link rel="stylesheet" href="home.css">
-    <title>Document</title>
+    <title>
+        <%= title %>
+    </title>
 </head>
 
 <body>
     <div id="container">
         <h1>TODO APP</h1>
-        <form action="/create-todo" class="todo" method="post">
+        <form action="/create-todo" id="create-todo" method="post">
 
             <div id="descripton">
-               <label for="input">DESCRIPTION</label>
-               <br>
-                <input type="text" name="todo-input" id="input" placeholder="What do you need to do?">
+                <label for="input">DESCRIPTION</label>
+                <br>
+                <input type="text" name="task" id="input" autocomplete="off" placeholder="What do you need to do?"
+                    required>
             </div>
             <div id="categories">
                 <div id="category">
@@ -36,20 +40,53 @@
                 <div id="due-date">
                     <span class="text">DUE DATE</span>
                     <br>
-                    <input type="date" name="due-date">
+                    <input type="date" name="dueDate">
                 </div>
             </div>
-
-            <button type="submit">
-                <i class="fas fa-plus"></i>    
-                ADD TASK
-            </button>
         </form>
 
+        <div class="action">
+            <button type="submit" form="create-todo" class="add-task-btn">
+                <i class="fas fa-plus"></i> Add Tasks
+            </button>
+
+            <button id="delete" class="delete-task-btn">
+                <i class="fas fa-trash-alt"></i> Delete Tasks
+            </button>
+        </div>
 
 
+        <div id="output">
 
-        
+            <% for(let i of Todos) { %>
+
+            <div class="todos">
+
+                <div class="desc-date">
+                    <div class="m-b-5">
+                        <%= i.task %>
+                    </div>
+                
+                    <div>
+                        <i class="fas fa-calendar-alt"></i>
+                        <%= i.dueDate.toDateString() %>
+                    </div>
+                </div>
+
+                <div class="cat-btn">
+                    <button class="<%=i.category%> ">
+                        <%= i.category %>
+                    </button>
+                    <button class="delete">
+                        <a href="./delete-todo/?id=<%=i._id%>"> Del </a>
+                    </button>
+
+                </div>
+
+            </div>
+            <% } %>
+        </div>
+
     </div>
 </body>
 
